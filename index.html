@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高知工業漕艇部</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ローディング画面 -->
+    <div id="loader">
+        <img src="kasuityou /kasuityou.gif" alt="高知工業校章" class="loader-logo">
+        <div class="loader-text">KOCHI KOGYO ROWING CLUB</div>
+    </div>
+
+    <!-- ヘッダー -->
+    <header id="header">
+        <div class="header-logo">
+            <img src="kasuityou /kasuityou.gif" alt="校章">
+            <span>高知工業漕艇部</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#rowing">ROWING</a></li>
+                <li><a href="#activity">ACTIVITY</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section id="hero">
+        <div class="hero-video-container">
+            <video autoplay loop muted playsinline class="hero-video active">
+                <source src="Movies/DJI_0321.MP4" type="video/mp4">
+            </video>
+            <video loop muted playsinline class="hero-video">
+                <source src="Movies/DJI_0153.MP4" type="video/mp4">
+            </video>
+            <video loop muted playsinline class="hero-video">
+                <source src="Movies/DJI_0445.MP4" type="video/mp4">
+            </video>
+            <video loop muted playsinline class="hero-video">
+                <source src="Movies/DJI_0305.MP4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">同じリズムで、<br>遠くへ。</h1>
+            <p class="hero-subtitle">高知工業高等学校 漕艇部</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <!-- Aboutセクション -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">ABOUT US<span>部について</span></h2>
+            <div class="about-content">
+                <div class="about-text glass-panel">
+                    <p>
+                        高知工業漕艇部は、日々の練習に励み、10年連続でインターハイに出場しています。<br>
+                        創部12年目。現在では高知県最大の部員数を有し、実力もNo.1！毎年全国大会へ出場し、高知県のボートシーンを牽引しています。
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="pictures/DSC_7393.JPG" alt="練習風景">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rowingセクション -->
+    <section id="rowing" class="section dark-section">
+        <div class="container">
+            <h2 class="section-title">WHAT'S ROWING?<span>ボート競技について</span></h2>
+            <div class="rowing-content glass-panel">
+                <div class="rowing-item">
+                    <div class="rowing-icon">🚣‍♂️</div>
+                    <h3>横一線のスタート</h3>
+                    <p>ボートとは、主に高校から始めるスポーツ。スタートラインに並ぶ全国のライバルたちと、横一線で勝負が始まります！</p>
+                </div>
+                <div class="rowing-item">
+                    <div class="rowing-icon">⚡</div>
+                    <h3>圧倒的な疾走感</h3>
+                    <p>水面を滑るように進むボート。この疾走感は、一度味わうと病みつきになること間違いなし！</p>
+                </div>
+                <div class="rowing-item">
+                    <div class="rowing-icon">🏆</div>
+                    <h3>高知県No.1の実績</h3>
+                    <p>創部12年目にして高知県最大の部員数を誇り、実力もNo.1。毎年、全国の舞台で戦っています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activityセクション -->
+    <section id="activity" class="section">
+        <div class="container">
+            <h2 class="section-title">ACTIVITY<span>活動スケジュール</span></h2>
+            <div class="schedule-grid">
+                <div class="schedule-item glass-panel">
+                    <div class="day">月</div>
+                    <div class="activity-desc">自主練習</div>
+                </div>
+                <div class="schedule-item glass-panel highlight">
+                    <div class="day">火</div>
+                    <div class="activity-desc">
+                        <span>乗艇 / 筋トレ</span>
+                        <small>放課後 約2時間</small>
+                    </div>
+                </div>
+                <div class="schedule-item glass-panel highlight">
+                    <div class="day">水</div>
+                    <div class="activity-desc">
+                        <span>乗艇 / 筋トレ</span>
+                        <small>放課後 約2時間</small>
+                    </div>
+                </div>
+                <div class="schedule-item glass-panel highlight">
+                    <div class="day">木</div>
+                    <div class="activity-desc">
+                        <span>乗艇 / 筋トレ</span>
+                        <small>放課後 約2時間</small>
+                    </div>
+                </div>
+                <div class="schedule-item glass-panel highlight">
+                    <div class="day">金</div>
+                    <div class="activity-desc">
+                        <span>乗艇 / 筋トレ</span>
+                        <small>放課後 約2時間</small>
+                    </div>
+                </div>
+                <div class="schedule-item glass-panel highlight">
+                    <div class="day">土</div>
+                    <div class="activity-desc">
+                        <span>乗艇 / 筋トレ</span>
+                        <small>放課後 約2時間</small>
+                    </div>
+                </div>
+                <div class="schedule-item glass-panel">
+                    <div class="day">日</div>
+                    <div class="activity-desc">OFF / 休み</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Galleryセクション -->
+    <section id="gallery" class="section dark-section">
+        <div class="container">
+            <h2 class="section-title">GALLERY<span>ギャラリー</span></h2>
+            <div class="gallery-grid">
+                <div class="gallery-item video-item">
+                    <video autoplay loop muted playsinline>
+                        <source src="Movies/DJI_0307.MP4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="gallery-item">
+                    <img src="pictures/DSC_7044.JPG" alt="ギャラリー画像">
+                </div>
+                <div class="gallery-item">
+                    <img src="pictures/DSC_7484.JPG" alt="ギャラリー画像">
+                </div>
+                <div class="gallery-item">
+                    <img src="pictures/DSC_7587.JPG" alt="ギャラリー画像">
+                </div>
+                <div class="gallery-item">
+                    <img src="pictures/DSC_7622.JPG" alt="ギャラリー画像">
+                </div>
+                <div class="gallery-item video-item">
+                    <video autoplay loop muted playsinline>
+                        <source src="Movies/DJI_0515.MP4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="kasuityou /kasuityou.gif" alt="高知工業校章">
+                    <h3>高知工業漕艇部</h3>
+                </div>
+                <div class="footer-info">
+                    <p>高知県立高知工業高等学校</p>
+                    <p>漕艇部（ボート部）</p>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@kths.rowing" target="_blank" rel="noopener noreferrer"
+                            class="social-icon youtube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kochikogyo_rowing/" target="_blank" rel="noopener noreferrer"
+                            class="social-icon instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kochi Kogyo Rowing Club. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
