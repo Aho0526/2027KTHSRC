@@ -52,7 +52,6 @@ ul {
 .loader-logo {
     width: 120px;
     margin-bottom: 20px;
-    animation: pulse 1.2s infinite;
 }
 
 .loader-text {
@@ -318,13 +317,14 @@ ul {
 }
 
 .section-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(3rem, 10vw, 6rem);
     font-weight: 900;
     margin-bottom: 80px;
     font-family: 'Outfit', sans-serif;
     text-transform: uppercase;
     line-height: 1;
     letter-spacing: -0.01em;
+    color: #ffffff;
 }
 
 .section-title span {
@@ -684,21 +684,24 @@ ul {
     }
 
     .about-content {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 0;
     }
 
+    .about-image {
+        width: 100%;
+        box-shadow: none;
+        margin-bottom: 20px;
+    }
+
     .about-text {
+        width: 100%;
         margin-right: 0;
         padding: 30px 20px !important;
         z-index: 1;
         font-size: 1rem;
         line-height: 1.8;
-    }
-
-    .about-image {
-        box-shadow: none;
-        margin-bottom: 20px;
     }
 
     .rowing-content {
@@ -821,7 +824,7 @@ ul {
     }
 
     .about-image {
-        box-shadow: 10px 10px 0 var(--accent-dim);
+        box-shadow: none;
     }
 
     .rowing-content {
