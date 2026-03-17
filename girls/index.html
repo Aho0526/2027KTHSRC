@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高知工業漕艇部 - Boys</title>
+    <title>高知工業漕艇部 - Girls</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Outfit:wght@700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
-    <!-- Boys: デフォルトのアクセントカラー（シアン）をそのまま使用 -->
+    <!-- Girls: アクセントカラーをピンク系にオーバーライド -->
+    <style>
+        :root {
+            --accent-color: #ff6b9d;
+            --accent-dim: rgba(255, 107, 157, 0.4);
+        }
+    </style>
 </head>
 
 <body>
@@ -42,29 +48,24 @@
     <!-- ヒーローセクション -->
     <section id="hero">
         <div class="hero-video-container">
+            <!-- Girls用ヒーロー動画（後で差し替え可能） -->
             <video autoplay loop muted playsinline class="hero-video active">
-                <source src="../Movies/DJI_0597.mp4" type="video/mp4">
+                <source src="../Movies/DJI_0519.mp4" type="video/mp4">
             </video>
             <video loop muted playsinline class="hero-video">
-                <source src="../Movies/DJI_0650.mp4" type="video/mp4">
+                <source src="../Movies/DJI_0683.mp4" type="video/mp4">
             </video>
             <video loop muted playsinline class="hero-video">
-                <source src="../Movies/GX014166.mp4" type="video/mp4">
+                <source src="../Movies/DJI_0688.mp4" type="video/mp4">
             </video>
             <video loop muted playsinline class="hero-video">
-                <source src="../Movies/DJI_0305.mp4" type="video/mp4">
-            </video>
-            <video loop muted playsinline class="hero-video">
-                <source src="../Movies/DJI_0321.mp4" type="video/mp4">
-            </video>
-            <video loop muted playsinline class="hero-video">
-                <source src="../Movies/DJI_0692.mp4" type="video/mp4">
+                <source src="../Movies/DJI_0695.mp4" type="video/mp4">
             </video>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title"><span>同じリズムで、</span><span>遠くへ。</span></h1>
-            <p class="hero-subtitle"><span>高知工業高等学校</span> <span>漕艇部 男子</span></p>
+            <h1 class="hero-title"><span>水面に咲く、</span><span>私たちの力。</span></h1>
+            <p class="hero-subtitle"><span>高知工業高等学校</span> <span>漕艇部 女子</span></p>
         </div>
         <div class="scroll-indicator">
             <span>SCROLL</span>
@@ -84,7 +85,7 @@
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="../pictures/DSC_7393.JPG" alt="練習風景">
+                    <img src="../pictures/IMG_3908.JPG" alt="練習風景">
                 </div>
             </div>
         </div>
@@ -180,11 +181,11 @@
             <div class="gallery-grid">
                 <div class="gallery-item video-item">
                     <video autoplay loop muted playsinline>
-                        <source src="../Movies/DJI_0307.mp4" type="video/mp4">
+                        <source src="../Movies/DJI_0467.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="gallery-item">
-                    <img src="../pictures/IMG_3907.JPG" alt="練習の記録">
+                    <img src="../pictures/IMG_3908.JPG" alt="練習の記録">
                 </div>
                 <div class="gallery-item">
                     <img src="../pictures/DSC_7425.JPG" alt="水面を進む">
@@ -197,7 +198,7 @@
                 </div>
                 <div class="gallery-item video-item">
                     <video autoplay loop muted playsinline>
-                        <source src="../Movies/DJI_0515.mp4" type="video/mp4">
+                        <source src="../Movies/DJI_0331.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="gallery-item">
