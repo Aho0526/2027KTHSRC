@@ -8,237 +8,208 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Outfit:wght@700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .landing {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            background: var(--bg-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .landing::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(0, 229, 255, 0.05) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(255, 107, 157, 0.05) 0%, transparent 50%);
+            animation: landingGlow 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes landingGlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(10deg); }
+        }
+
+        .landing-logo {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .landing-logo img {
+            width: 100px;
+            margin-bottom: 20px;
+            animation: pulse 1.2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+
+        .landing-logo h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #fff;
+        }
+
+        .landing-logo p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            letter-spacing: 0.3em;
+        }
+
+        .landing-choices {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .landing-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 260px;
+            height: 320px;
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .landing-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .landing-card.boys::before {
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, transparent 60%);
+        }
+
+        .landing-card.girls::before {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, transparent 60%);
+        }
+
+        .landing-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .landing-card:hover::before {
+            opacity: 1;
+        }
+
+        .landing-card .card-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        .landing-card.boys .card-label {
+            background: linear-gradient(to bottom, #fff, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .landing-card.girls .card-label {
+            background: linear-gradient(to bottom, #fff, #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .landing-card .card-sub {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+            letter-spacing: 0.2em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .landing-card .card-arrow {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .landing-card:hover .card-arrow {
+            transform: translateX(8px);
+        }
+
+        @media (max-width: 600px) {
+            .landing-choices {
+                gap: 20px;
+            }
+
+            .landing-card {
+                width: 160px;
+                height: 220px;
+            }
+
+            .landing-card .card-label {
+                font-size: 2.5rem;
+            }
+
+            .landing-card .card-arrow {
+                margin-top: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- ローディング画面 -->
-    <div id="loader">
-        <img src="kasuityou/kasuityou.gif" alt="高知工業校章" class="loader-logo">
-        <div class="loader-text">KOCHI KOGYO ROWING CLUB</div>
+    <div class="landing">
+        <div class="landing-logo">
+            <img src="kasuityou/kasuityou.gif" alt="高知工業校章">
+            <h1>Kochi Kogyo Rowing</h1>
+            <p>高知工業漕艇部</p>
+        </div>
+        <div class="landing-choices">
+            <a href="boys/" class="landing-card boys">
+                <div class="card-label">Boys</div>
+                <div class="card-sub">男子</div>
+                <div class="card-arrow">→</div>
+            </a>
+            <a href="girls/" class="landing-card girls">
+                <div class="card-label">Girls</div>
+                <div class="card-sub">女子</div>
+                <div class="card-arrow">→</div>
+            </a>
+        </div>
     </div>
-
-    <!-- ヘッダー -->
-    <header id="header">
-        <div class="header-logo">
-            <img src="kasuityou/kasuityou.gif" alt="校章">
-            <span>高知工業漕艇部</span>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#rowing">ROWING</a></li>
-                <li><a href="#activity">ACTIVITY</a></li>
-                <li><a href="#gallery">GALLERY</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- ヒーローセクション -->
-    <section id="hero">
-        <div class="hero-video-container">
-            <video autoplay loop muted playsinline class="hero-video active">
-                <source src="Movies/DJI_0597.mp4" type="video/mp4">
-            </video>
-            <video loop muted playsinline class="hero-video">
-                <source src="Movies/DJI_0650.mp4" type="video/mp4">
-            </video>
-            <video loop muted playsinline class="hero-video">
-                <source src="Movies/GX014166.mp4" type="video/mp4">
-            </video>
-            <video loop muted playsinline class="hero-video">
-                <source src="Movies/DJI_0305.mp4" type="video/mp4">
-            </video>
-            <video loop muted playsinline class="hero-video">
-                <source src="Movies/DJI_0321.mp4" type="video/mp4">
-            </video>
-            <video loop muted playsinline class="hero-video">
-                <source src="Movies/DJI_0692.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title"><span>同じリズムで、</span><span>遠くへ。</span></h1>
-            <p class="hero-subtitle"><span>高知工業高等学校</span> <span>漕艇部</span></p>
-        </div>
-        <div class="scroll-indicator">
-            <span>SCROLL</span>
-            <div class="line"></div>
-        </div>
-    </section>
-
-    <!-- Aboutセクション -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title"><span>ABOUT US</span><span>部について</span></h2>
-            <div class="about-content">
-                <div class="about-text glass-panel">
-                    <p>
-                        高知工業漕艇部は、日々の練習に励み、10年連続でインターハイに出場しています。<br>
-                        創部12年目。現在では高知県最大の部員数を有し、実力もNo.1！毎年全国大会へ出場し、高知県のボートシーンを牽引しています。
-                    </p>
-                </div>
-                <div class="about-image">
-                    <img src="pictures/DSC_7393.JPG" alt="練習風景">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Rowingセクション -->
-    <section id="rowing" class="section dark-section">
-        <div class="container">
-            <h2 class="section-title"><span>WHAT'S ROWING?</span><span>ボート競技について</span></h2>
-            <div class="rowing-content">
-                <div class="rowing-item glass-panel">
-                    <div class="rowing-number">01</div>
-                    <h3>横一線のスタート</h3>
-                    <p>ボートとは、主に高校から始めるスポーツ。スタートラインに並ぶ全国のライバルたちと、横一線で勝負が始まります！</p>
-                </div>
-                <div class="rowing-item glass-panel">
-                    <div class="rowing-number">02</div>
-                    <h3>圧倒的な疾走感</h3>
-                    <p>水面を滑るように進むボート。この疾走感は、一度味わうと病みつきになること間違いなし！</p>
-                </div>
-                <div class="rowing-item glass-panel">
-                    <div class="rowing-number">03</div>
-                    <h3>高知県No.1の実績</h3>
-                    <p>創部12年目にして高知県最大の部員数を誇り、実力もNo.1。毎年、全国の舞台で戦っています。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Activityセクション -->
-    <section id="activity" class="section">
-        <div class="container">
-            <h2 class="section-title"><span>ACTIVITY</span><span>活動スケジュール</span></h2>
-            <div class="schedule-grid">
-                <div class="schedule-item">
-                    <div class="day">月</div>
-                    <div class="activity-desc">
-                        <span>自主練習</span>
-                        <small>個人メニュー中心</small>
-                    </div>
-                </div>
-                <div class="schedule-item highlight">
-                    <div class="day">火</div>
-                    <div class="activity-desc">
-                        <span>乗艇 / 筋トレ</span>
-                        <small>放課後 約2時間 / 集中トレーニング</small>
-                    </div>
-                </div>
-                <div class="schedule-item highlight">
-                    <div class="day">水</div>
-                    <div class="activity-desc">
-                        <span>乗艇 / 筋トレ</span>
-                        <small>放課後 約2時間 / 技術向上</small>
-                    </div>
-                </div>
-                <div class="schedule-item highlight">
-                    <div class="day">木</div>
-                    <div class="activity-desc">
-                        <span>乗艇 / 筋トレ</span>
-                        <small>放課後 約2時間 / パワーアップ</small>
-                    </div>
-                </div>
-                <div class="schedule-item highlight">
-                    <div class="day">金</div>
-                    <div class="activity-desc">
-                        <span>乗艇 / 筋トレ</span>
-                        <small>放課後 約2時間 / 実戦練習</small>
-                    </div>
-                </div>
-                <div class="schedule-item highlight">
-                    <div class="day">土</div>
-                    <div class="activity-desc">
-                        <span>乗艇 / 筋トレ</span>
-                        <small>放課後 約2時間 / 週末追い込み</small>
-                    </div>
-                </div>
-                <div class="schedule-item">
-                    <div class="day">日</div>
-                    <div class="activity-desc">
-                        <span>OFF / 休み</span>
-                        <small>リカバリー</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Galleryセクション -->
-    <section id="gallery" class="section dark-section">
-        <div class="container">
-            <h2 class="section-title"><span>GALLERY</span><span>ギャラリー</span></h2>
-            <div class="gallery-grid">
-                <div class="gallery-item video-item">
-                    <video autoplay loop muted playsinline>
-                        <source src="Movies/DJI_0307.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <img src="pictures/IMG_3907.JPG" alt="練習の記録">
-                </div>
-                <div class="gallery-item">
-                    <img src="pictures/DSC_7425.JPG" alt="水面を進む">
-                </div>
-                <div class="gallery-item">
-                    <img src="pictures/DSC_7555.JPG" alt="チームワーク">
-                </div>
-                <div class="gallery-item">
-                    <img src="pictures/DSC_7044.JPG" alt="夕暮れの練習">
-                </div>
-                <div class="gallery-item video-item">
-                    <video autoplay loop muted playsinline>
-                        <source src="Movies/DJI_0515.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <img src="pictures/DSC_7484.JPG" alt="ボートのディテール">
-                </div>
-                <div class="gallery-item">
-                    <img src="pictures/DSC_7587.JPG" alt="勝利への軌跡">
-                </div>
-                <div class="gallery-item">
-                    <img src="pictures/DSC_7622.JPG" alt="静寂の水面">
-                </div>
-            </div>
-    </section>
-
-    <!-- フッター -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="kasuityou/kasuityou.gif" alt="高知工業校章">
-                    <h3>高知工業漕艇部</h3>
-                </div>
-                <div class="footer-info">
-                    <p>高知県立高知工業高等学校</p>
-                    <p>漕艇部（ボート部）</p>
-                    <div class="social-links">
-                        <a href="https://www.youtube.com/@kths.rowing" target="_blank" rel="noopener noreferrer"
-                            class="social-icon youtube">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a href="https://www.instagram.com/kochikogyo_rowing/" target="_blank" rel="noopener noreferrer"
-                            class="social-icon instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Kochi Kogyo Rowing Club. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
