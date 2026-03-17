@@ -100,12 +100,23 @@ ul {
     padding: 20px 80px;
 }
 
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-logo img {
+    height: 38px;
+}
+
 .header-logo span {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    white-space: nowrap;
 }
 
 .nav-links {
@@ -226,6 +237,7 @@ ul {
     display: block;
     background: linear-gradient(to bottom, #fff 40%, var(--accent-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -673,17 +685,20 @@ ul {
 
     .about-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 0;
     }
 
     .about-text {
         margin-right: 0;
-        padding: 50px !important;
+        padding: 30px 20px !important;
         z-index: 1;
+        font-size: 1rem;
+        line-height: 1.8;
     }
 
     .about-image {
-        box-shadow: 20px 20px 0 var(--accent-dim);
+        box-shadow: none;
+        margin-bottom: 20px;
     }
 
     .rowing-content {
@@ -720,9 +735,12 @@ ul {
         display: none; /* モバイルメニューは省略 */
     }
 
+    .header-logo img {
+        height: 26px;
+    }
+
     .header-logo span {
-        font-size: 0.9rem;
-        white-space: nowrap;
+        font-size: 0.8rem;
     }
 
     .rowing-item {
