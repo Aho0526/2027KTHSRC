@@ -43,17 +43,98 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // 一度表示されたら監視を解除する場合は以下を有効化
-                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
     // アニメーション対象の要素を取得
-    const animateElements = document.querySelectorAll('.about-text, .about-image, .gallery-item, .rowing-item, .schedule-item');
+    const animateElements = document.querySelectorAll('.about-text, .about-image, .gallery-container, .rowing-item, .schedule-item');
     animateElements.forEach(el => {
         observer.observe(el);
     });
+
+    // ギャラリースライダーのロジック
+    const initGallerySlider = () => {
+        const slider = document.querySelector('.gallery-slider');
+        const slides = document.querySelectorAll('.gallery-slide');
+        const dotsContainer = document.querySelector('.gallery-nav');
+        const prevBtn = document.querySelector('.gallery-btn.prev');
+        const nextBtn = document.querySelector('.gallery-btn.next');
+
+        if (!slider || slides.length === 0) return;
+
+        let currentIndex = 0;
+        let startX = 0;
+        let isDragging = false;
+        let autoPlayInterval;
+
+        // ドットの生成
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('gallery-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.gallery-dot');
+
+        const updateSlider = () => {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        };
+
+        const goToSlide = (index) => {
+            currentIndex = (index + slides.length) % slides.length;
+            updateSlider();
+            resetAutoPlay();
+        };
+
+        const nextSlide = () => goToSlide(currentIndex + 1);
+        const prevSlide = () => goToSlide(currentIndex - 1);
+
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+        // タッチ / スワイプ対応
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            clearInterval(autoPlayInterval);
+        });
+
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const currentX = e.touches[0].clientX;
+            const diff = startX - currentX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) nextSlide();
+                else prevSlide();
+                isDragging = false;
+            }
+        });
+
+        slider.addEventListener('touchend', () => {
+            isDragging = false;
+            resetAutoPlay();
+        });
+
+        // オートプレイ (4秒)
+        const startAutoPlay = () => {
+            autoPlayInterval = setInterval(nextSlide, 4000);
+        };
+
+        const resetAutoPlay = () => {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        };
+
+        startAutoPlay();
+    };
+
+    initGallerySlider();
 
     // スムーススクロール
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
