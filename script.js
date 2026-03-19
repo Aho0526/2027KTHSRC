@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // アニメーション対象の要素を取得
-    const animateElements = document.querySelectorAll('.about-text, .about-image, .gallery-container, .rowing-item, .schedule-item');
+    const animateElements = document.querySelectorAll('.about-text, .about-image, .gallery-container, .rowing-item, .schedule-item, .manager-content, .boat-type-card');
     animateElements.forEach(el => {
         observer.observe(el);
     });
@@ -103,18 +103,24 @@ document.addEventListener('DOMContentLoaded', () => {
             startX = e.touches[0].clientX;
             isDragging = true;
             clearInterval(autoPlayInterval);
-        });
+        }, { passive: true });
 
         slider.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
             const currentX = e.touches[0].clientX;
             const diff = startX - currentX;
+            
+            // X方向への移動が大きい場合のみスワイプと判定し、デフォルトスクロールを防止
+            if (Math.abs(diff) > 10 && e.cancelable) {
+                e.preventDefault();
+            }
+
             if (Math.abs(diff) > 50) {
                 if (diff > 0) nextSlide();
                 else prevSlide();
                 isDragging = false;
             }
-        });
+        }, { passive: false });
 
         slider.addEventListener('touchend', () => {
             isDragging = false;
