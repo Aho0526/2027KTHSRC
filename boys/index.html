@@ -10,7 +10,20 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
-    <!-- Boys: デフォルトのアクセントカラー（シアン）をそのまま使用 -->
+    <!-- Boys: 共通の装飾スタイルを定義 -->
+    <style>
+        /* 英語の見出しを大きく白文字に強調 (共通デザイン) */
+        h2.section-title span:first-child {
+            font-size: clamp(3.5rem, 10vw, 7.5rem) !important;
+            color: #ffffff !important;
+            font-family: 'Outfit', sans-serif !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.02em !important;
+            font-weight: 900 !important;
+            margin-top: 0 !important;
+            line-height: 1.1;
+        }
+    </style>
 </head>
 
 <body>
@@ -111,6 +124,61 @@
                     <p>創部12年目にして高知県最大の部員数を誇り、実力もNo.1。毎年、全国の舞台で戦っています。</p>
                 </div>
             </div>
+
+            <!-- ボート種目紹介 -->
+            <div class="boat-types-section" style="margin-top: 150px;">
+                <h3 class="section-title"
+                    style="font-size: 2.5rem; margin-bottom: 60px; text-align: center; color: #fff;">
+                    <span
+                        style="display: block; font-size: 1rem; font-family: 'Noto Sans JP', sans-serif; color: var(--accent-color); letter-spacing: 0.3em; margin-bottom: 10px; font-weight: 700;">BOAT
+                        TYPES</span>
+                    競技種目
+                </h3>
+                <div class="boat-types-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                    <!-- シングルスカル -->
+                    <div class="boat-type-card glass-panel"
+                        style="padding: 30px; text-align: center; border-color: var(--accent-color); background: rgba(0, 229, 255, 0.03);">
+                        <img src="../pictures/girls/bsingle.JPG" alt="Pic-M1X"
+                            style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                        <h4
+                            style="font-size: 1.6rem; color: #fff; font-family: 'Outfit', sans-serif; margin-bottom: 15px; letter-spacing: 0.05em;">
+                            シングルスカル <span style="color: var(--accent-color); font-size: 1rem; margin-left: 10px;">1x</span>
+                        </h4>
+                        <p style="text-align: left; font-size: 1rem; color: #e0e0e0; line-height: 1.6;">
+                            １人で漕ぐ競技。ボート競技では唯一の個人競技。精神強者が勝つ。
+                        </p>
+                    </div>
+
+                    <!-- ダブルスカル -->
+                    <div class="boat-type-card glass-panel"
+                        style="padding: 30px; text-align: center; border-color: var(--accent-color); background: rgba(0, 229, 255, 0.03);">
+                        <img src="../pictures/girls/bdouble.JPG" alt="Pic-M2X"
+                            style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                        <h4
+                            style="font-size: 1.6rem; color: #fff; font-family: 'Outfit', sans-serif; margin-bottom: 15px; letter-spacing: 0.05em;">
+                            ダブルスカル <span style="color: var(--accent-color); font-size: 1rem; margin-left: 10px;">2x</span>
+                        </h4>
+                        <p style="text-align: left; font-size: 1rem; color: #e0e0e0; line-height: 1.6;">
+                            ２人で息を合わせて漕ぐことで、かなりのスピードが出る。
+                        </p>
+                    </div>
+
+                    <!-- 舵手付きクォドルプル -->
+                    <div class="boat-type-card glass-panel"
+                        style="padding: 30px; text-align: center; border-color: var(--accent-color); background: rgba(0, 229, 255, 0.03);">
+                        <img src="../pictures/girls/bquad.JPG" alt="Pic-M4X+"
+                            style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                        <h4
+                            style="font-size: 1.6rem; color: #fff; font-family: 'Outfit', sans-serif; margin-bottom: 15px; letter-spacing: 0.05em;">
+                            舵手付きクォドルプル <span style="color: var(--accent-color); font-size: 1rem; margin-left: 10px;">4x+</span>
+                        </h4>
+                        <p style="text-align: left; font-size: 1rem; color: #e0e0e0; line-height: 1.6;">
+                            ４人で漕ぎ、舵手が1人。高校競技で最速であり、花形種目。
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -123,42 +191,41 @@
                     <div class="day">月</div>
                     <div class="activity-desc">
                         <span>自主練習</span>
-                        <small>個人メニュー中心</small>
                     </div>
                 </div>
                 <div class="schedule-item highlight">
                     <div class="day">火</div>
                     <div class="activity-desc">
-                        <span>乗艇 / 筋トレ</span>
-                        <small>放課後 約2時間 / 集中トレーニング</small>
+                        <span>乗艇/筋トレ</span>
+                        <small>放課後 約2時間</small>
                     </div>
                 </div>
                 <div class="schedule-item highlight">
                     <div class="day">水</div>
                     <div class="activity-desc">
-                        <span>乗艇 / 筋トレ</span>
-                        <small>放課後 約2時間 / 技術向上</small>
+                        <span>乗艇/筋トレ</span>
+                        <small>放課後 約2時間</small>
                     </div>
                 </div>
                 <div class="schedule-item highlight">
                     <div class="day">木</div>
                     <div class="activity-desc">
-                        <span>乗艇 / 筋トレ</span>
-                        <small>放課後 約2時間 / パワーアップ</small>
+                        <span>乗艇/筋トレ</span>
+                        <small>放課後 約2時間</small>
                     </div>
                 </div>
                 <div class="schedule-item highlight">
                     <div class="day">金</div>
                     <div class="activity-desc">
-                        <span>乗艇 / 筋トレ</span>
-                        <small>放課後 約2時間 / 実戦練習</small>
+                        <span>乗艇/筋トレ</span>
+                        <small>放課後 約2時間</small>
                     </div>
                 </div>
                 <div class="schedule-item highlight">
                     <div class="day">土</div>
                     <div class="activity-desc">
-                        <span>乗艇 / 筋トレ</span>
-                        <small>放課後 約2時間 / 週末追い込み</small>
+                        <span>乗艇/筋トレ</span>
+                        <small>午前中 約4時間</small>
                     </div>
                 </div>
                 <div class="schedule-item">
@@ -180,14 +247,14 @@
             <div class="gallery-container">
                 <div class="gallery-slider">
                     <div class="gallery-slide">
-                        <img src="../pictures/boys/IMG_3907.JPG" alt="練習の記録">
+                        <img src="../pictures/boys/IMG_3907.JPG" alt="インターハイ">
                     </div>
                     <div class="gallery-slide">
                         <img src="../pictures/boys/IMG_3728.HEIC" alt="練習風景">
                     </div>
                     <!-- Shared assets from anyway folder -->
                     <div class="gallery-slide">
-                        <img src="../pictures/anyway/IMG_3746.HEIC" alt="練習風景">
+                        <img src="../pictures/anyway/IMG_3746.HEIC" alt="食事風景">
                     </div>
                     <div class="gallery-slide">
                         <img src="../pictures/anyway/PV写真260314_1.jpg" alt="練習風景">
@@ -218,7 +285,7 @@
                         <img src="../pictures/boys/PV写真260314_7.jpg" alt="練習風景">
                     </div>
                     <div class="gallery-slide">
-                        <img src="../pictures/boys/PV写真260314_70.jpg" alt="練習風景">
+                        <img src="../pictures/boys/DSC_1466.JPG" alt="練習風景">
                     </div>
                 </div>
                 <!-- スライダーナビゲーション -->
