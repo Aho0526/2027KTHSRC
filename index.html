@@ -29,8 +29,8 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(ellipse at 30% 50%, rgba(0, 229, 255, 0.05) 0%, transparent 50%),
-                        radial-gradient(ellipse at 70% 50%, rgba(255, 107, 157, 0.05) 0%, transparent 50%);
+            background: radial-gradient(ellipse at 30% 50%, rgba(168, 50, 50, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(168, 50, 50, 0.08) 0%, transparent 50%);
             animation: landingGlow 8s ease-in-out infinite alternate;
         }
 
@@ -108,12 +108,9 @@
             transition: opacity 0.5s ease;
         }
 
-        .landing-card.boys::before {
-            background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, transparent 60%);
-        }
-
+        .landing-card.boys::before,
         .landing-card.girls::before {
-            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, transparent 60%);
+            background: linear-gradient(135deg, rgba(168, 50, 50, 0.1) 0%, transparent 60%);
         }
 
         .landing-card:hover {
@@ -134,15 +131,9 @@
             z-index: 1;
         }
 
-        .landing-card.boys .card-label {
-            background: linear-gradient(to bottom, #fff, var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
+        .landing-card.boys .card-label,
         .landing-card.girls .card-label {
-            background: linear-gradient(to bottom, #fff, #ff6b9d);
+            background: linear-gradient(to bottom, #fff, var(--accent-color));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
