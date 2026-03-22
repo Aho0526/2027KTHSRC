@@ -1,7 +1,7 @@
 :root {
     --primary-color: #030712;
-    --accent-color: #00e5ff;
-    --accent-dim: rgba(0, 229, 255, 0.4);
+    --accent-color: #a83232;
+    --accent-dim: rgba(168, 50, 50, 0.4);
     --text-color: #ffffff;
     --text-muted: #94a3b8;
     --bg-dark: #030712;
@@ -610,7 +610,7 @@ ul {
 }
 
 .schedule-item:hover {
-    background: rgba(0, 229, 255, 0.03) !important;
+    background: rgba(168, 50, 50, 0.03) !important;
     transform: none !important;
 }
 
@@ -645,8 +645,8 @@ ul {
 }
 
 .schedule-item.highlight {
-    background: rgba(0, 229, 255, 0.05);
-    border-color: rgba(0, 229, 255, 0.3);
+    background: rgba(168, 50, 50, 0.05);
+    border-color: rgba(168, 50, 50, 0.3);
 }
 
 /* ===== フッター ===== */
