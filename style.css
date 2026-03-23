@@ -757,11 +757,16 @@ ul {
     height: 100%;
 }
 /* ==フォント--*/
-#pv .section-title,
-#pv .section-title span {
+#pv .section-title {
     font-size: clamp(2.4rem, 10vw, 8rem) !important;
     line-height: 1.1 !important;
 }
+
+#pv .section-title span:last-child {
+    font-size: 1rem !important; /* カタカナ部分は通常サイズに戻す */
+    margin-top: 15px !important;
+}
+
 
 /* ===== フッター ===== */
 #contact {
