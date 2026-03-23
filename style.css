@@ -759,7 +759,7 @@ ul {
 
 /* PVセクション見出し専用 - 長い英語タイトルがスマホではみ出さないようにサイズ調整 */
 #pv .section-title {
-    font-size: clamp(2rem, 8vw, 8rem);
+    font-size: clamp(1rem, 4vw, 4rem);
 }
 
 /* ===== フッター ===== */
