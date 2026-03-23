@@ -4,7 +4,28 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         loader.style.opacity = '0';
         loader.style.visibility = 'hidden';
-    }, 2500);
+    }, 1200); // 2.5sから1.2sに短縮
+
+    // 通信速度の監視と警告
+    if ('connection' in navigator) {
+        const conn = navigator.connection;
+        const checkConnection = () => {
+            if (conn.saveData || (conn.effectiveType && ['slow-2g', '2g', '3g'].includes(conn.effectiveType))) {
+                const warning = document.createElement('div');
+                warning.className = 'network-warning';
+                warning.innerHTML = '<i class="fas fa-wifi-slash"></i> 通信速度が低速なため、動画の読込に時間がかかる場合があります。';
+                document.body.appendChild(warning);
+                setTimeout(() => warning.classList.add('show'), 2000); // ローディングが終わる頃に表示
+                
+                // 5秒後に自動で消す
+                setTimeout(() => {
+                    warning.classList.remove('show');
+                    setTimeout(() => warning.remove(), 500);
+                }, 8000);
+            }
+        };
+        checkConnection();
+    }
 
     // ヒーロー動画の切り替え（6秒ごと）
     const heroVideos = document.querySelectorAll('.hero-video');
