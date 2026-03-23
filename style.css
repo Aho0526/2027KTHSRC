@@ -758,16 +758,18 @@ ul {
 }
 /* ==フォント--*/
 #pv .section-title span:first-child {
-    font-size: clamp(2.1rem, 9vw, 8rem) !important;
-    line-height: 1.1 !important;
+    font-size: clamp(1.6rem, 5vw, 2.8rem) !important;
+    line-height: 1.2 !important;
     display: block;
+    margin-bottom: 5px !important;
 }
 
 #pv .section-title span:last-child {
     font-size: 1rem !important; /* カタカナ部分は通常サイズを維持 */
-    margin-top: 15px !important;
+    margin-top: 10px !important;
     display: block;
     letter-spacing: 0.3em !important;
+    color: var(--accent-color) !important;
 }
 
 
