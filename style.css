@@ -759,8 +759,8 @@ ul {
 /* ==フォント--*/
 #pv .section-title,
 #pv .section-title span {
-    font-size: 1rem !important;
-    letter-spacing: 0.1em !important;
+    font-size: clamp(2.4rem, 10vw, 8rem) !important;
+    line-height: 1.1 !important;
 }
 
 /* ===== フッター ===== */
