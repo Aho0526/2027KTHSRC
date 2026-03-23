@@ -757,6 +757,11 @@ ul {
     height: 100%;
 }
 
+/* PVセクション見出し専用 - 長い英語タイトルがスマホではみ出さないようにサイズ調整 */
+#pv .section-title {
+    font-size: clamp(2rem, 8vw, 8rem);
+}
+
 /* ===== フッター ===== */
 #contact {
     background: #040810;
