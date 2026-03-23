@@ -339,8 +339,9 @@ ul {
     line-height: 1.1;
     letter-spacing: -0.01em;
     color: #ffffff;
+    word-break: keep-all; /* 単語の途中での改行を防ぐ */
     overflow-wrap: break-word;
-    text-wrap: balance; /* ブラウザがサポートしていればバランス良く改行 */
+    text-wrap: balance;
 }
 
 .section-title span {
@@ -1040,8 +1041,8 @@ ul {
     }
 
     .section-title {
-        font-size: clamp(2.2rem, 11vw, 3.5rem); /* 最小値をさらに調整して320px幅にも配慮 */
-        line-height: 1.05;
+        font-size: clamp(1.8rem, 10vw, 3.5rem); /* 極端に細い画面でも単語が収まるよう最小値を調整 */
+        line-height: 1.1;
         margin-bottom: 40px;
         letter-spacing: -0.02em;
     }
