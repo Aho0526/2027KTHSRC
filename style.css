@@ -758,12 +758,12 @@ ul {
 }
 
 /* PVセクション見出し専用 - 長い英語タイトルがスマホではみ出さないようにサイズ調整 */
-/* PVセクション見出し専用 - 長い英語タイトルが周りのセクションより一回り小さくなるように調整 */
+/* PVセクション見出し専用 - 2行にスタックしてインパクトを出しつつハミ出さないように調整 */
 #pv .section-title span:first-child {
-    font-size: clamp(1.6rem, 5vw, 2.8rem) !important;
-    line-height: 1.2 !important;
+    font-size: clamp(2.6rem, 11vw, 5.5rem) !important;
+    line-height: 0.95 !important;
     display: block;
-    margin-bottom: 5px !important;
+    margin-bottom: 15px !important;
 }
 
 #pv .section-title span:last-child {
