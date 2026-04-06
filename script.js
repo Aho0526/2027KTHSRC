@@ -1,10 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ローディング画面の非表示
+    // ローディング画面の制御
     const loader = document.getElementById('loader');
-    setTimeout(() => {
+    const firstHeroVideo = document.querySelector('.hero-video.active');
+    
+    // ローディングを消す関数
+    const hideLoader = () => {
         loader.style.opacity = '0';
         loader.style.visibility = 'hidden';
-    }, 1200); // 2.5sから1.2sに短縮
+    };
+
+    // 最低限表示する時間 (ブランドイメージのため)
+    const minLoadingTime = 1200;
+    const startTime = Date.now();
+
+    const triggerHideLoader = () => {
+        const elapsedTime = Date.now() - startTime;
+        const remainingTime = Math.max(0, minLoadingTime - elapsedTime);
+        setTimeout(hideLoader, remainingTime);
+    };
+
+    if (firstHeroVideo) {
+        // 動画が既に再生可能な状態かチェック (HAVE_FUTURE_DATA: 3 以上)
+        if (firstHeroVideo.readyState >= 3) {
+            triggerHideLoader();
+        } else {
+            // 動画の読み込み完了を待つ
+            firstHeroVideo.addEventListener('canplaythrough', triggerHideLoader, { once: true });
+            
+            // セーフティタイムアウト (通信が極端に遅い場合などは20秒で切り上げる)
+            setTimeout(triggerHideLoader, 20000);
+        }
+    } else {
+        // 動画がないページ等のフォールバック
+        triggerHideLoader();
+    }
+
+    // --- 読み込み遅延の警告表示 (10秒以上かかる場合) ---
+    const loadingWarningTimer = setTimeout(() => {
+        // まだページか動画の読み込みが終わっていないかチェック
+        if (loader.style.visibility !== 'hidden') {
+            const warningEl = document.createElement('div');
+            warningEl.className = 'loader-warning';
+            warningEl.innerHTML = '<i class="fas fa-exclamation-triangle"></i> 通信速度の影響で読み込みに問題がある可能性があります';
+            loader.appendChild(warningEl);
+            
+            // アニメーションのために微小な遅延を置いてクラス追加
+            setTimeout(() => warningEl.classList.add('show'), 100);
+        }
+    }, 10000); // 10秒
+
 
     // 通信速度の監視と警告
     if ('connection' in navigator) {
