@@ -1168,6 +1168,35 @@ ul {
     color: #ffcc00;
 }
 
+/* ローディング画面内の遅延警告 */
+.loader-warning {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    letter-spacing: 0.05em;
+}
+
+.loader-warning.show {
+    opacity: 1;
+}
+
+.loader-warning i {
+    color: #ffcc00;
+}
+
 @media (max-width: 600px) {
     .network-warning {
         width: 90%;
